@@ -5,7 +5,8 @@
     <string name="after_decryption">解密後的結果如下</string>
     <string name="encrypt">加密</string>
     <string name="decrypt">解密</string>
-    <string name="helpText">模擬輸入從雲端取得的金錀</string>
-    <string name="promptTitle">生物辦識</string>
-    <string name="promptDescription">生物辦識成功後才能加解密資料</string>
+    <string name="help_text">模擬輸入從雲端取得的金錀</string>
+    <string name="prompt_title">生物辦識</string>
+    <string name="prompt_description">生物辦識成功後才能加解密資料</string>
+    <string name="un_support_message">您的裝置不支援生物辦識功能</string>
 </resources>

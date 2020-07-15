@@ -92,8 +92,8 @@ class BiometricHelper(
         return BiometricPrompt.PromptInfo.Builder()
             .setConfirmationRequired(true)
             .setDeviceCredentialAllowed(purpose == Purpose.Normal)
-            .setTitle(context.getString(R.string.promptTitle))
-            .setDescription(context.getString(R.string.promptDescription))
+            .setTitle(context.getString(R.string.prompt_title))
+            .setDescription(context.getString(R.string.prompt_description))
             .apply { if (purpose != Purpose.Normal) setNegativeButtonText(context.getString(android.R.string.cancel)) }
             .build()
     }

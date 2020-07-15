@@ -6,6 +6,7 @@ import android.security.KeyPairGeneratorSpec
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import android.util.Base64
+import androidx.annotation.RequiresApi
 import timber.log.Timber
 import java.math.BigInteger
 import java.security.KeyPairGenerator
@@ -75,6 +76,7 @@ class KeyStoreHelper(private val context: Context) {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun generateRSAKeyAboveApi23() {
 
         val keyPairGenerator = KeyPairGenerator.getInstance(KeyProperties.KEY_ALGORITHM_RSA, AndroidKeyStore)

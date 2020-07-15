@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.hyena.companytest2.R
 import com.hyena.companytest2.home.biometric.BiometricAuthEvents
 import com.hyena.companytest2.home.biometric.BiometricHelper
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -41,6 +42,9 @@ class HomeViewModel(
                     is BiometricAuthEvents.AuthenticationSucceeded -> {
                     }
                     is BiometricAuthEvents.AuthenticationFailed -> {
+                    }
+                    is BiometricAuthEvents.UnSupportedBiometricAuth -> {
+                        Toast.makeText(app, app.getString(R.string.un_support_message), Toast.LENGTH_SHORT).show()
                     }
                     is BiometricAuthEvents.AuthenticationError -> {
                         Toast.makeText(app, it.errorMessage, Toast.LENGTH_SHORT).show()
