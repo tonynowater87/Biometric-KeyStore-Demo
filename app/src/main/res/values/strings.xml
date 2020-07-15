@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Biometric&amp;KeyStore Demo</string>
+    <string name="after_encryption">加密後的結果如下</string>
+    <string name="after_encryption_format">[%1$s]加密後的結果如下</string>
+    <string name="after_decryption">解密後的結果如下</string>
+    <string name="encrypt">加密</string>
+    <string name="decrypt">解密</string>
+    <string name="helpText">模擬輸入從雲端取得的金錀</string>
+    <string name="promptTitle">生物辦識</string>
+    <string name="promptDescription">生物辦識成功後才能加解密資料</string>
+</resources>

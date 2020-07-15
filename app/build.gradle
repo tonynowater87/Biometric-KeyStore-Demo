@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.firebase.crashlytics' // Apply the Crashlytics Gradle plugin
+apply plugin: "androidx.navigation.safeargs.kotlin" // for generate NavArg classes from nav_graph
+
+android {
+    compileSdkVersion Versions.COMPILE_SDK
+    buildToolsVersion Versions.BUILD_TOOL
+
+    defaultConfig {
+        applicationId "com.hyena.companytest2"
+        minSdkVersion Versions.MIN_SDK
+        targetSdkVersion Versions.TARGET_SDK
+        versionCode Versions.CODE
+        versionName Versions.NAME
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation Root.KOTLIN_STD_LIB
+    implementation Google.APP_COMPAT
+    implementation Google.KTX_CORE
+    implementation Google.CONSTRAINT_LAYOUT
+    implementation Google.NAVIGATION_UI
+    implementation Google.NAVIGATION_FRAGMENT
+    implementation Google.MATERIAL
+    implementation Google.STARTUP
+    implementation Google.BIOMETRIC
+
+    implementation Koin.ANDROID
+    implementation Koin.SCOPE
+    implementation Koin.VIEWMODEL
+
+    implementation RxJava.ANDROID
+    implementation RxJava.CORE
+    implementation RxJava.KOTLIN
+
+    implementation Utils.TIMBER
+
+    testImplementation TestDep.JUNIT
+
+    androidTestImplementation AndroidTestDep.JUNIT
+    androidTestImplementation AndroidTestDep.ESPRESSO
+}
